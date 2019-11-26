@@ -1,0 +1,41 @@
+{%extends 'base.html'%}
+{%load static %}
+
+    <!-- header-end -->
+
+    <!-- welcome_techload_start -->
+    {%block content%}
+   
+
+
+   <!--================Blog Area =================-->
+
+   <section class="blog_area single-post-area section-padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+                  <div class="feature-img">
+                     <img class="img-fluid" src="img/blog/single_blog_1.png" alt="">
+                  </div>
+                  <div class="blog_details">
+                     <h1>{{post.title}}</h1>
+                        <p>{{post.content}}</p>
+                        <p>{{post.get_totol}}&nbsp; Likes&emsp;|&emsp;{{post.get_total_report}}&nbsp; Strikes&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;~{{post.author}}</p> 
+                        
+                    {%if show%}
+                    <a href="{%url 'update' post.id%}"><button class="btn btn-6 btn-6d">Update</button></a>
+                    <a href="{%url 'delete' post.id %}"><button class="btn btn-6 btn-6d"  >Delete</button></a>
+                   
+                                        {%endif%}
+                     <a href="{%url 'like' post.id %}"><button class="btn btn-6 btn-6d" >Like</button></a>
+
+                    {%if show1%}
+                        <a href="{%url 'report' post.id %}"><button type="button">Strike</button></a>
+                     {%endif%}
+                    <br>
+                  </div>
+               </div>
+
+
+{%endblock%} 

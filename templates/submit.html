@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+{%load static %}
+    <!-- header-end -->
+
+    <!-- welcome_techload_start -->
+    {%block content%}
+<div class="container">
+  
+	<link rel="stylesheet" type="text/css" href="{%static 'css/s.css'%}" >
+  <form id="contact" method="post"  style="width:500px; height:400px;">
+  <h1 style="text-align:center"><strong> Do you want to write? </strong></h1>
+  
+    {%csrf_token%}
+    <fieldset>
+      <input placeholder="Title" type="text" name="title" tabindex="1" required autofocus>
+    </fieldset>
+    <select name="genre">
+      <option value="AI">AI</option>
+      <option value="ML">ML</option>
+      <option value="Robotics">Robotics</option>
+      <option value="WebD">WebD</option>
+      <option value="Science">Science</option>
+    </select>
+    <fieldset>
+      <textarea placeholder="Type your post..."  name="content" required></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+  </form>
+</div>
+{%endblock%}

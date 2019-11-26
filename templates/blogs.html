@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{%load static %}
+    <!-- header-end -->
+
+    <!-- welcome_techload_start -->
+    {%block content%}
+  
+
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section-padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+                  <div class="feature-img">
+                     <img class="img-fluid" src="img/blog/single_blog_1.png" alt="">
+                  </div>
+                  <div class="blog_details">
+                     {%for post in posts%}
+                     <h2><a href="{%url 'post' post.id%}">{{post.title}}</a></h2>
+                     <p>{{post.date_posted}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;~{{post.author}}</p>        
+                     {%endfor%}
+                    
+                  </div>
+         
+                     
+                    
+                  
+               
+                           
+                     
+                     
+                     
+                
+                 
+
+{%endblock%}
